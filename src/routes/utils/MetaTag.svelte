@@ -1,6 +1,7 @@
 <script lang="ts">
   import { MetaTags } from 'svelte-meta-tags';
   export let breadcrumb_title: string = '';
+  export let component_title: string = '';
   export let description: string = '';
   export let title: string = '';
   // title = title.replaceAll(' ', '-');
@@ -9,19 +10,22 @@
   )}`;
   export let dir: string = '';
   let dirstring = dir.toLowerCase();
-  let breadcrumb = breadcrumb_title.toLowerCase().replaceAll(' ', '-');
+  
+  let component_slug = component_title.toLowerCase().replaceAll(' ', '-');
+
 </script>
 
 <MetaTags
   title={breadcrumb_title}
   titleTemplate="%s - Flowbite"
+  canonical={`https://flowbite-svelte.com/docs/${dirstring}/${component_slug}`}
   {description}
   facebook={{
     appId: '453670756870545'
   }}
   openGraph={{
     type: 'website',
-    url: `https://flowbite-svelte.com/${dirstring}/${breadcrumb}`,
+    url: `https://flowbite-svelte.com/docs/${dirstring}/${component_slug}`,
     title: `${title}`,
     description: `${description}`,
     images: [
