@@ -1,10 +1,18 @@
 import { expect, test } from '@playwright/test';
 
-// Accordion
+// Accordion tests
 test('Accordion page should have h1', async ({ page }) => {
   await page.goto('/docs/components/accordion');
   expect(await page.textContent('h1')).toBe('Svelte Accordion - Flowbite');
 });
+
+test('Accordion page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/accordion');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/accordion');
+});
+// End of Accordion
 
 // Alert
 test('Alert page should have h1', async ({ page }) => {
@@ -12,11 +20,27 @@ test('Alert page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Alert - Flowbite');
 });
 
+test('Alert page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/alert');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/alert');
+});
+// End of Alert
+
 // Avatar
 test('Avatar page should have h1', async ({ page }) => {
   await page.goto('/docs/components/avatar');
   expect(await page.textContent('h1')).toBe('Svelte Avatar - Flowbite');
 });
+
+test('Avatar page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/avatar');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/avatar');
+});
+// End of Avatar
 
 // Badges
 test('Badges page should have h1', async ({ page }) => {
@@ -24,11 +48,27 @@ test('Badges page should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Badge - Flowbite');
 });
 
+test('Badges page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/badge');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/badge');
+});
+// End of Badges
+
 // Banner
 test('Banner page should have h1', async ({ page }) => {
   await page.goto('/docs/components/banner');
   expect(await page.textContent('h1')).toBe('Svelte Sticky Banner - Flowbite');
 });
+
+test('Banner page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/banner');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/banner');
+});
+// End of Banner
 
 // Bottom navigation
 test('Bottom navigation should have h1', async ({ page }) => {
@@ -36,11 +76,27 @@ test('Bottom navigation should have h1', async ({ page }) => {
   expect(await page.textContent('h1')).toBe('Svelte Bottom Navigation - Flowbite');
 });
 
+test('Banner page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/bottom-navigation');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/bottom-navigation');
+});
+// End of Bottom navigation
+
 // Breadcrumbs
 test('Breadcrumb page should have h1', async ({ page }) => {
   await page.goto('/docs/components/breadcrumb');
   expect(await page.textContent('h1')).toBe('Svelte Breadcrumb - Flowbite');
 });
+
+test('Breadcrumbs page should have canonical link', async ({ page }) => {
+  await page.goto('/docs/components/breadcrumb');
+  const canonicalLink = await page.$('link[rel="canonical"]');
+  const href = await canonicalLink.getAttribute('href');
+  expect(href).toBe('https://flowbite-svelte.com/docs/components/breadcrumb');
+});
+// End of Breadcrumbs
 
 // Button groups
 test('Button Group page should have h1', async ({ page }) => {
